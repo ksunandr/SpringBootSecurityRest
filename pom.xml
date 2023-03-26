@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 
+
 	</properties>
 	<dependencies>
 <!--todo need to update cause WebSecurityConfigurerAdapter is deprecated in the new versions-->
