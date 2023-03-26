@@ -17,8 +17,9 @@ public class TokenManager implements Serializable {
     public static final long TOKEN_VALIDITY = 10 * 60 * 60;
 
     private static final long serialVersionUID = -3725107055642071511L;
-    @Value("${secret}")
-    private String jwtSecret;
+
+   // @Value("${secret}")
+    private String jwtSecret = "somerandomsecret";
     public String generateJwtToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
         return Jwts.builder().setClaims(claims).setSubject(userDetails.getUsername())
