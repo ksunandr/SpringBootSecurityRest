@@ -23,13 +23,11 @@ public class JwtController {
     @Autowired
     private TokenManager tokenManager;
     @PostMapping("/login")
-    public ResponseEntity<JwtResponseModel> createToken(@RequestBody JwtRequestModel
-                                                request) throws Exception {
+    public ResponseEntity<JwtResponseModel> createToken(@RequestBody JwtRequestModel request) throws Exception {
         try {
-            authenticationManager.authenticate(
-                    new
-                            UsernamePasswordAuthenticationToken(request.getUsername(),
-                            request.getPassword())
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+                    request.getUsername(),
+                    request.getPassword())
             );
         } catch (DisabledException e) {
             throw new Exception("USER_DISABLED", e);
